@@ -1,12 +1,14 @@
 fibo := method(n,
-  prev := 0
-  curr := 1
-  for(i, 1, n - 1,
-    tmp := curr
-    curr := tmp + prev
-    prev := tmp
+  if(n < 2, return 1)
+  n1 := 0
+  n2 := 1
+  tmp := 0
+  (n - 1) repeat(
+    tmp = n1
+    n1 = n2
+    n2 = tmp + n1
   )
-  curr
+  n2
 )
 
 fibo(10) println
